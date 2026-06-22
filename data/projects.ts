@@ -17,8 +17,8 @@ export const projectsData: Project[] = [
   {
     title: "System Recovery & Server Hardening",
     id: 2,
-    description: "Experiment and implementation of full-scale system recovery from malware attacks, WordPress & CI environment isolation, and VPS optimization via CyberPanel & Cloudflare.",
-    tech: ["CyberPanel", "Cloudflare", "VPS Linux", "Security Redesign"],
+    description: "Experiment and implementation of full-scale system recovery from malware attacks, WordPress & CI environment isolation, and VPS optimization via Cpanel & Cloudflare.",
+    tech: ["Cpanel", "Cloudflare", "VPS Linux", "Security Redesign"],
     category: "Security & Server"
   },
   {

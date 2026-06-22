@@ -1,85 +1,87 @@
-'use client';
+"use client";
 
-// 1. IMPORT ICON DARI REACT-ICONS BRAY
 import { 
-  SiPhp, 
-  SiCodeigniter, 
-  SiLaravel, 
-  SiMysql,
-  SiFlutter,
-  SiDart, 
-  SiLinux, 
-  SiCpanel,
-  SiVultr, 
-  SiCloudflare, 
-  SiWordpress, 
-  SiTailwindcss, 
-  SiJavascript, 
-  SiTypescript, 
-  SiNextdotjs,
-  SiGooglecloud 
-} from 'react-icons/si';
+  SiPhp, SiCodeigniter, SiLaravel, SiMysql, SiFlutter, 
+  SiDart, SiWordpress, SiTailwindcss, SiJavascript, 
+  SiTypescript, SiNextdotjs, SiVultr, SiCloudflare, SiLinux 
+} from "react-icons/si";
 
 export default function Skills() {
-  // 2. KITA TAMBAHIN MAPPING ICON & WARNA NYA DI SINI BRAY
-  const skillCategories = [
-    {
-      title: "Backend Development",
-      skills: [
-        { name: "PHP", icon: <SiPhp className="text-[#777BB4]" /> },
-        { name: "CodeIgniter 3", icon: <SiCodeigniter className="text-[#EE4323]" /> },
-        { name: "Laravel", icon: <SiLaravel className="text-[#FF2D20]" /> },
-        { name: "MySQL", icon: <SiMysql className="text-[#4479A1]" /> },
-        { name: "Flutter", icon: <SiFlutter className="text-[#4479A1]" /> },
-        { name: "Dart", icon: <SiDart className="text-[#4479A1]" /> }
-      ]
-    },
-    {
-      title: "Server & Security",
-      skills: [
-        { name: "VPS Linux", icon: <SiLinux className="text-[#FCC624]" /> },
-        { name: "Cpanel", icon: <SiCpanel className="text-[#4C6EF5]" /> },
-        { name: "Vultr", icon: <SiVultr className="text-[#4479A1]" /> }, // <--- Panggil SiCpanel
-        { name: "Cloudflare", icon: <SiCloudflare className="text-[#F38020]" /> },
-        { name: "Server Hardening", icon: <SiGooglecloud className="text-[#2DD4BF]" /> } // <--- Panggil SiGooglecloud
-      ]
-    },
-    {
-      title: "Frontend & CMS",
-      skills: [
-        { name: "WordPress", icon: <SiWordpress className="text-[#21759B]" /> },
-        { name: "Tailwind CSS", icon: <SiTailwindcss className="text-[#06B6D4]" /> },
-        { name: "JavaScript", icon: <SiJavascript className="text-[#F7DF1E]" /> },
-        { name: "TypeScript", icon: <SiTypescript className="text-[#3178C6]" /> },
-        { name: "Next.js", icon: <SiNextdotjs className="text-white" /> }
-      ]
-    }
+  // Data tech stack dari screenshot lu bray!
+  const row1 = [
+    { name: "PHP", icon: <SiPhp className="text-[#777BB4]" /> },
+    { name: "CodeIgniter 3", icon: <SiCodeigniter className="text-[#EE4326]" /> },
+    { name: "Laravel", icon: <SiLaravel className="text-[#FF2D20]" /> },
+    { name: "MySQL", icon: <SiMysql className="text-[#4479A1]" /> },
+    { name: "WordPress", icon: <SiWordpress className="text-[#21759B]" /> },
+    { name: "Next.js", icon: <SiNextdotjs className="text-black" /> },
+    { name: "TypeScript", icon: <SiTypescript className="text-[#3178C6]" /> },
   ];
 
+  const row2 = [
+    { name: "Tailwind CSS", icon: <SiTailwindcss className="text-[#06B6D4]" /> },
+    { name: "JavaScript", icon: <SiJavascript className="text-[#F7DF1E] text-slate-950" /> },
+    { name: "Flutter", icon: <SiFlutter className="text-[#02569B]" /> },
+    { name: "Dart", icon: <SiDart className="text-[#0175C2]" /> },
+    { name: "VPS Linux", icon: <SiLinux className="text-[#FCC624]" /> },
+    { name: "Vultr", icon: <SiVultr className="text-[#007BFF]" /> },
+    { name: "Cloudflare", icon: <SiCloudflare className="text-[#F38020]" /> },
+  ];
+
+  // Kita gandakan array-nya biar jalannya nyambung terus tanpa putus
+  const marqueeItems1 = [...row1, ...row1, ...row1];
+  const marqueeItems2 = [...row2, ...row2, ...row2];
+
   return (
-    <section id="skills" className="max-w-6xl mx-auto px-4 py-24 relative z-10">
-      <p className="text-teal-400 font-mono text-sm mb-2">// EXPERTISE</p>
-      <h2 className="text-3xl font-bold text-white mb-12">Tech Stack & Skillset</h2>
+    // 1. FIX BACKGROUND SECTION: Diubah jadi transparan murni tanpa warna abu-abu penghalang grid
+    <section id="skills" className="py-24 relative overflow-hidden w-full z-10">
       
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {skillCategories.map((category, idx) => (
-          <div key={idx} className="p-6 bg-slate-900/40 border border-slate-800/60 rounded-xl backdrop-blur-sm hover:border-teal-500/30 transition-colors duration-300">
-            <h3 className="text-xl font-semibold text-teal-400 mb-5">{category.title}</h3>
-            
-            <div className="flex flex-wrap gap-2.5">
-              {category.skills.map((skill, sIdx) => (
-                <span 
-                  key={sIdx} 
-                  className="flex items-center gap-2 px-3 py-1.5 bg-slate-950 text-slate-300 rounded-md text-sm border border-slate-800 hover:border-slate-700 transition-all duration-200"
-                >
-                  {/* PANGGIL ICON NYA DI SINI BRAY */}
-                  <span className="text-base flex-shrink-0">{skill.icon}</span>
-                  {skill.name}
-                </span>
-              ))}
-            </div>
+      <div className="max-w-6xl mx-auto px-4 mb-12">
+        {/* Teks Subtitle dipertajam ke teal-700 */}
+        <span className="text-teal-700 font-mono text-sm font-bold tracking-widest block mb-2">// EXPERTISE</span>
+        {/* Judul Utama disamakan jadi slate-900 hitam pekat */}
+        <h2 className="text-4xl font-bold text-slate-900 tracking-tight">
+          Tech Stack &amp; Skillset
+        </h2>
+      </div>
+
+      {/* AREA UTAMA LOOPING MARQUEE */}
+      <div className="relative flex flex-col gap-6 w-full">
+        
+        {/* Masking Blur Kanan Kiri disesuaikan pudar ke warna mint background (#E6F4F1) */}
+        <div className="absolute inset-y-0 left-0 w-20 md:w-40 bg-gradient-to-r from-[#E6F4F1] to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-y-0 right-0 w-20 md:w-40 bg-gradient-to-l from-[#E6F4F1] to-transparent z-10 pointer-events-none" />
+
+        {/* BARIS 1: JALAN KE KIRI (Putih Kaca Bersih) */}
+        <div className="flex overflow-hidden select-none w-full group">
+          <div className="flex gap-4 pr-4 min-w-full shrink-0 animate-marquee-custom hover:[animation-play-state:paused]">
+            {marqueeItems1.map((item, idx) => (
+              <div 
+                key={idx} 
+                className="flex items-center gap-3 bg-white/75 border border-teal-200/50 px-6 py-3.5 rounded-xl text-slate-800 font-mono text-sm font-semibold shadow-sm hover:border-teal-400 hover:bg-white transition-all duration-300 backdrop-blur-md"
+              >
+                <span className="text-2xl flex-shrink-0">{item.icon}</span>
+                <span>{item.name}</span>
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
+
+        {/* BARIS 2: JALAN REVERSE KE KANAN (Putih Kaca Bersih) */}
+        <div className="flex overflow-hidden select-none w-full">
+          <div className="flex gap-4 pr-4 min-w-full shrink-0 animate-marquee-reverse-custom hover:[animation-play-state:paused]">
+            {marqueeItems2.map((item, idx) => (
+              <div 
+                key={idx} 
+                className="flex items-center gap-3 bg-white/75 border border-teal-200/50 px-6 py-3.5 rounded-xl text-slate-800 font-mono text-sm font-semibold shadow-sm hover:border-teal-400 hover:bg-white transition-all duration-300 backdrop-blur-md"
+              >
+                <span className="text-2xl flex-shrink-0">{item.icon}</span>
+                <span>{item.name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
       </div>
     </section>
   );

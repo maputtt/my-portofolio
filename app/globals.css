@@ -24,3 +24,23 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* --- ANIMATION INFINITE MARQUEE BRAY --- */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marquee-reverse {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0%); }
+}
+
+/* Class custom pendukung buat kita panggil di komponen nanti */
+.animate-marquee-custom {
+  animation: marquee 35s linear infinite;
+}
+
+.animate-marquee-reverse-custom {
+  animation: marquee-reverse 35s linear infinite;
+}
