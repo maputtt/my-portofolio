@@ -1,2 +1,4 @@
 # source PDFs (old portfolio has a home address); the public CV lives in assets/
 docs/
+# local knowledge graph; Vercel would serve it publicly if committed
+graphify-out/

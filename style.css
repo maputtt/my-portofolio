@@ -197,6 +197,7 @@ h2 { font-size: clamp(36px, 5.5vw, 64px); }
 .contact-copy { display: flex; flex-direction: column; gap: 32px; }
 .contact-copy .label { margin-bottom: 0; }
 .contact-title { font-size: clamp(52px, 7.5vw, 104px); line-height: .92; letter-spacing: -0.04em; }
+.avail { font-size: 20px; font-weight: 500; max-width: 620px; }
 .mail {
   width: fit-content; max-width: 100%; overflow-wrap: anywhere; padding: 22px 32px; background: var(--ink); color: #fff; text-decoration: none;
   font: 700 clamp(16px, 2vw, 24px)/1.2 var(--mono); border: 3px solid var(--ink); border-radius: 16px; box-shadow: 6px 6px 0 var(--lemon); transition: transform .12s, box-shadow .12s;
